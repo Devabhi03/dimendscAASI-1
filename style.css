@@ -1,0 +1,173 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrollbar from appearing */
+        }
+        .bg-custom-peach {
+            background-color: #fcebe3;
+        }
+
+        /* Styles for the ring cycling animation */
+        .ring-container {
+            position: relative;
+            width: 100%; /* Make container full width to allow for wide positioning */
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .ring-item {
+            position: absolute;
+            transition: all 1.5s ease-in-out;
+            width: 180px;
+        }
+
+        .ring-item img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+        }
+        
+        /* Positions for the three rings */
+        .position-1 { /* Top-center position */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .position-2 { /* Far-left position */
+            top: 50px; 
+            left: 15vw; 
+            transform: scale(0.7); 
+            opacity: 0.6;
+            z-index: 5;
+        }
+
+        .position-3 { /* Far-right position */
+            top: 50px;
+            right: 15vw; 
+            left: auto; 
+            transform: scale(0.7);
+            opacity: 0.6;
+            z-index: 5;
+        }
+        
+        /* Background text styling */
+        .background-text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 1; 
+        }
+
+        .background-text {
+            font-size: 5rem; 
+            font-weight: 100; 
+            color: #f0f0f0; 
+            letter-spacing: 0.1em;
+            transition: opacity 0.7s ease-in-out;
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow if text is too long */
+            text-overflow: ellipsis; /* Add ellipsis if text is truncated */
+        }
+
+        /* Text content below animation styling */
+        .product-details {
+            transition: opacity 0.7s ease-in-out;
+        }
+        
+        /* Swiper Carousel Styles for Coverflow */
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 250px; 
+            height: 300px; 
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .swiper-slide img {
+            max-width: 150px; 
+            height: auto;
+            margin-bottom: 1rem;
+            filter: none; 
+        }
+
+        .swiper-slide h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .swiper-slide p {
+            font-size: 0.875rem;
+            color: #f9a885; 
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: #000;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .position-2, .position-3 {
+                display: none; /* Hide side rings on mobile */
+            }
+            .background-text {
+                font-size: 3rem; /* Reduce background text size */
+                /* Further adjust for very small screens if needed */
+                font-size: clamp(2rem, 10vw, 3rem); /* Responsive font size */
+            }
+            /* Adjust ring-item size for smaller screens if needed */
+            .ring-item {
+                width: 150px; /* Slightly smaller ring on mobile */
+            }
+            /* Social icons and scroll down button on mobile */
+            .left-6, .right-6 {
+                position: static; /* Remove absolute positioning */
+                transform: none; /* Remove transform */
+                display: flex; /* Make them flex containers */
+                justify-content: center; /* Center them */
+                margin-top: 1rem; /* Add some space */
+            }
+            .left-6 { order: 2; } /* Order social icons below other content */
+            .right-6 { order: 1; } /* Order scroll button above social icons */
+
+            /* Ensure image group in "Keep In Touch" section is responsive */
+            .grid.md\:grid-cols-2 > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Tablet Responsive Styles (adjust as needed) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .background-text {
+                font-size: 4rem; /* Adjust background text size for tablets */
+            }
+            .ring-item {
+                width: 160px; /* Adjust ring size for tablets */
+            }
+            .position-2 { 
+                left: 10vw; /* Adjust side ring position for tablets */
+            }
+            .position-3 { 
+                right: 10vw; /* Adjust side ring position for tablets */
+            }
+        }
+

@@ -1,51 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Original Navigation Toggle (from initial code) ---
-    const bar = document.getElementById('bar');
-    const close = document.getElementById('close');
-    const nav = document.getElementById('navbar');
+    // --- Unified Mobile Navigation Toggle ---
+    // This single block now handles showing and hiding the mobile menu.
+    const navBar = document.getElementById('navbar');
+    const menuOpenBtn = document.getElementById('bar');
+    const menuCloseBtn = document.getElementById('close');
 
-    if (bar) {
-        bar.addEventListener('click', () => {
-            if (nav) {
-                nav.classList.add('active');
-            }
+    if (navBar && menuOpenBtn) {
+        menuOpenBtn.addEventListener('click', () => {
+            navBar.classList.add('active');
         });
     }
 
-    if (close) {
-        close.addEventListener('click', () => {
-            if (nav) {
-                nav.classList.remove('active');
-            }
+    if (navBar && menuCloseBtn) {
+        menuCloseBtn.addEventListener('click', () => {
+            navBar.classList.remove('active');
         });
     }
 
-    // --- Original Product Image Gallery (from initial code) ---
-    // This script is for the product detail page.
-    const MainImg = document.getElementById("MainImg");
-    const smallimg = document.getElementsByClassName("small-img");
+    // --- Product Image Gallery ---
+    // This script handles the image selection on a product detail page.
+    const mainImg = document.getElementById("MainImg");
+    const smallImgs = document.getElementsByClassName("small-img");
 
-    if (MainImg && smallimg.length > 0) {
-        // This loop makes the code work for any number of small images
-        for (let i = 0; i < smallimg.length; i++) {
-            smallimg[i].onclick = function() {
-                MainImg.src = this.src;
+    // This check ensures the code only runs on pages with a product gallery.
+    if (mainImg && smallImgs.length > 0) {
+        for (let i = 0; i < smallImgs.length; i++) {
+            smallImgs[i].onclick = function() {
+                mainImg.src = this.src;
             };
         }
     }
 
-    // --- New Hamburger Menu Toggle (from new code) ---
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden'); // Toggles the 'hidden' class
-        });
-    }
-
-    // --- New Ring Cycling Animation (from new code) ---
+    // --- Ring Cycling Animation ---
+    // This animates the rings on the homepage.
     const rings = document.querySelectorAll('.ring-item');
     const backgroundTitle = document.getElementById('background-title');
     const mainTitle = document.getElementById('main-ring-title');
@@ -53,8 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainCode = document.getElementById('main-ring-code');
     const productDetails = document.getElementById('product-details');
 
-    // Check if ring elements exist before running animation code
+    // This check ensures the animation code only runs on the homepage.
     if (rings.length > 0 && backgroundTitle && mainTitle && mainPrice && mainCode && productDetails) {
+        
         function updateTextContent() {
             const topRing = document.querySelector('.ring-item[data-pos="1"]');
             if (!topRing) return;
@@ -74,18 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 productDetails.style.opacity = 1;
                 backgroundTitle.style.opacity = 1;
-            }, 750);
+            }, 750); // Half of the CSS transition duration
         }
 
         function cycleRings() {
             rings.forEach(ring => {
-                let currentPos = parseInt(ring.dataset.pos);
-                currentPos++;
-                if (currentPos > 3) {
-                    currentPos = 1;
-                }
+                let currentPos = parseInt(ring.dataset.pos, 10);
+                currentPos = (currentPos % 3) + 1; // Cycles through 1, 2, 3
                 ring.dataset.pos = currentPos;
-                ring.className = `ring-item position-${ring.dataset.pos}`;
+                ring.className = `ring-item position-${currentPos}`;
             });
             updateTextContent();
         }
@@ -99,11 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(cycleRings, 4000);
     }
 
-
-    // --- New Swiper Carousel (from new code) ---
-    // Note: This requires the Swiper.js library to be included in your HTML.
+    // --- Swiper Carousel ---
+    // This initializes the Swiper.js carousel if the library is loaded.
     if (typeof Swiper !== 'undefined') {
-        var swiper = new Swiper('.swiper-container', {
+        new Swiper('.swiper-container', {
             effect: 'coverflow',
             grabCursor: true,
             centeredSlides: true,
@@ -123,8 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- New Smooth Scroll (from new code) ---
+    // --- Smooth Scroll for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();

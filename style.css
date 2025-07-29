@@ -171,3 +171,40 @@
             }
         }
 
+/* ... other styles ... */
+
+.swiper-slide p {
+    font-size: 0.875rem;
+    /* ACCESSIBILITY FIX: Changed color from #f9a885 to a darker shade for better contrast against the white background. */
+    color: #d97706; /* A darker, more accessible orange/brown */
+}
+
+/* ... other styles ... */
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* ... other mobile styles ... */
+
+    /* ACCESSIBILITY FIX: Increased touch target size for social icons and scroll down button on mobile */
+    .left-6, .right-6 {
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .left-6 a, .right-6 a {
+        padding: 0.5rem; /* Adds padding to increase touch area */
+        min-width: 44px; /* Ensures a minimum width */
+        min-height: 44px; /* Ensures a minimum height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .left-6 { order: 2; }
+    .right-6 { order: 1; }
+
+    /* ... other mobile styles ... */
+}
+
+/* ... other styles ... */

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover exquisite diamond jewelry, engagement rings, and fine accessories at dimendSCAASI. Explore our collection of timeless pieces and superior cut diamonds.">
     <title>dimendSCAASI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -15,7 +16,7 @@
     <header class="py-4 border-b">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-600 hover:text-black">
+                <button id="menu-btn" class="text-gray-600 hover:text-black p-2" aria-label="Open navigation menu">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
             </div>
@@ -29,8 +30,8 @@
                 <a href="#" class="text-gray-600 hover:text-black">Watches</a>
             </nav>
             <div class="flex items-center space-x-6">
-                <a href="#" class="text-gray-600 hover:text-black"><i class="fas fa-search"></i></a>
-                <a href="#" class="text-gray-600 hover:text-black"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-gray-600 hover:text-black p-2" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-600 hover:text-black p-2" aria-label="User Account"><i class="fas fa-user"></i></a>
             </div>
         </div>
 
@@ -77,12 +78,12 @@
         </div>
         
         <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col space-y-4 md:flex md:space-y-4">
-            <a href="#" class="text-gray-500 hover:text-black"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-gray-500 hover:text-black"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-500 hover:text-black p-2" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-500 hover:text-black p-2" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-500 hover:text-black p-2" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="absolute right-6 top-1/2 -translate-y-1/2 md:flex">
-            <a href="#collection" class="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center text-gray-500 hover:bg-gray-200">
+            <a href="#collection" class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-500 hover:bg-gray-200" aria-label="Scroll to collection">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
@@ -95,7 +96,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-12">
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <div class="flex-grow flex items-center justify-center mb-4 h-40">
-                        <img src="Images/Image 1.webp" class="rounded-md mx-auto max-h-full object-contain" alt="Wedding Rings">
+                        <img src="Images/Image 1.webp" class="rounded-md mx-auto max-h-full object-contain" alt="Wedding Rings" loading="lazy">
                     </div>
                     <div>
                         <h3 class="font-semibold mt-2 text-lg">Wedding Rings</h3>
@@ -104,7 +105,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <div class="flex-grow flex items-center justify-center mb-4 h-40">
-                        <img src="Images/Image 2.webp" alt="Engagement Rings" class="rounded-md mx-auto max-h-full object-contain">
+                        <img src="Images/Image 2.webp" alt="Engagement Rings" class="rounded-md mx-auto max-h-full object-contain" loading="lazy">
                     </div>
                     <div>
                         <h3 class="font-semibold mt-2 text-lg">Engagement Rings</h3>
@@ -113,7 +114,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <div class="flex-grow flex items-center justify-center mb-4 h-40">
-                        <img src="Images/Image 3.webp" alt="Fine Jewelry" class="rounded-md mx-auto max-h-full object-contain">
+                        <img src="Images/Image 3.webp" alt="Fine Jewelry" class="rounded-md mx-auto max-h-full object-contain" loading="lazy">
                     </div>
                     <div>
                         <h3 class="font-semibold mt-2 text-lg">Fine Jewelry</h3>
@@ -122,7 +123,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <div class="flex-grow flex items-center justify-center mb-4 h-40">
-                        <img src="Images/Image 4.webp" class="rounded-md mx-auto max-h-full object-contain" alt="Latest Rings">
+                        <img src="Images/Image 4.webp" class="rounded-md mx-auto max-h-full object-contain" alt="Latest Rings" loading="lazy">
                     </div>
                     <div>
                         <h3 class="font-semibold mt-2 text-lg">Latest Rings</h3>
@@ -141,25 +142,25 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/1.webp" alt="Round Diamond">
+                        <img src="Images/Diamond shapes/1.webp" alt="Round Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/2.webp" alt="Emerald Diamond">
+                        <img src="Images/Diamond shapes/2.webp" alt="Emerald Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/3.webp" alt="Oval Diamond">
+                        <img src="Images/Diamond shapes/3.webp" alt="Oval Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/4.webp" alt="Heart Diamond">
+                        <img src="Images/Diamond shapes/4.webp" alt="Heart Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/5.webp" alt="Asscher Diamond">
+                        <img src="Images/Diamond shapes/5.webp" alt="Asscher Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/6.webp" alt="Heart Diamond">
+                        <img src="Images/Diamond shapes/6.webp" alt="Heart Diamond" loading="lazy">
                     </div>
                     <div class="swiper-slide">
-                        <img src="Images/Diamond shapes/7.webp" alt="Round Diamond">
+                        <img src="Images/Diamond shapes/7.webp" alt="Round Diamond" loading="lazy">
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -179,10 +180,10 @@
                     </form>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="Images/Image group/1.webp" alt="Couple wearing wedding rings" class="rounded-lg object-cover w-full h-full">
-                    <img src="Images/Image group/2.webp" alt="Couple holding hands at a cafe" class="rounded-lg object-cover w-full h-full">
-                    <img src="Images/Image group/3.webp" alt="Woman wearing a silver bracelet" class="rounded-lg object-cover w-full h-full">
-                    <img src="Images/Image group/4.webp" alt="Wedding rings on a pillow" class="rounded-lg object-cover w-full h-full">
+                    <img src="Images/Image group/1.webp" alt="Couple wearing wedding rings" class="rounded-lg object-cover w-full h-full" loading="lazy">
+                    <img src="Images/Image group/2.webp" alt="Couple holding hands at a cafe" class="rounded-lg object-cover w-full h-full" loading="lazy">
+                    <img src="Images/Image group/3.webp" alt="Woman wearing a silver bracelet" class="rounded-lg object-cover w-full h-full" loading="lazy">
+                    <img src="Images/Image group/4.webp" alt="Wedding rings on a pillow" class="rounded-lg object-cover w-full h-full" loading="lazy">
                 </div>
             </div>
         </div>
@@ -214,8 +215,8 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-   <script src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+   <script src="script.js" defer></script>
 
 </body>
 </html>
